@@ -1,101 +1,108 @@
 <div align="center">
 
-<img width="300" height="300" alt="logo" src="https://github.com/user-attachments/assets/cbee268c-51f3-465c-975b-c0b72b018218" />
+<img width="220" height="220" alt="Mot7km logo" src="https://github.com/user-attachments/assets/cbee268c-51f3-465c-975b-c0b72b018218" />
 
+# Mot7km <sub>متحكم</sub>
 
-### Take control of your business
+### Smart Restaurant Control
 
-Mot7km is a modern Business Operating System built to help businesses run with more clarity, control, and confidence.
+**Take control of your business — anywhere.**
 
-**Control | Track | Understand | Grow**
+Mot7km is a multi-sided SaaS platform for restaurants, cafés, and F&B businesses: a **web dashboard** for owners, **mobile & desktop apps** for staff, and a **QR-based digital menu** for customers — all connected in one system.
+
+[![Status](https://img.shields.io/badge/status-in%20development-orange)]()
+[![Stack](https://img.shields.io/badge/backend-ASP.NET%20Core-512BD4)]()
+[![Stack](https://img.shields.io/badge/mobile-Flutter-02569B)]()
+[![Stack](https://img.shields.io/badge/web-Next.js-black)]()
+[![License](https://img.shields.io/badge/license-Proprietary-lightgrey)]()
+
+[Overview](#overview) • [Why Mot7km](#why-mot7km) • [What It Does](#what-it-does) • [Who It's For](#who-its-for) • [Architecture](#architecture) • [Roadmap](#roadmap) • [Team](#team)
 
 </div>
 
 ---
 
-## About Mot7km
+## Overview
 
-Mot7km is a unified platform designed for modern operational businesses that need better visibility across sales, operations, and daily performance.
+Most small and mid-sized F&B businesses run on a patchwork of tools — a POS here, a spreadsheet there, a paper logbook for staff attendance, and no real visibility into what's actually happening across branches. Owners end up managing their business by chasing information instead of making decisions with it.
 
-We build tools that help business owners move from manual follow-up and fragmented workflows to structured, data-driven management.
+**Mot7km replaces that patchwork with one connected system**, built around a simple principle:
 
----
+> **Web = Thinking & Control.**  Business owners plan, configure, and analyze from a full-featured web dashboard.
+> **Mobile = Execution & Speed.**  Managers and staff act fast from lightweight mobile apps.
+> **Desktop = Reliability & Operations.**  Cashiers get a fast, offline-resilient POS built for the floor.
 
-## What Mot7km Stands For
+## Why Mot7km
 
-Mot7km is built around one idea:
+- 🎯 **One source of truth** — menu, products, branches, staff, and analytics, in one place instead of five.
+- ⚡ **Built for daily use, not just setup** — mobile tools are designed for speed, not dashboard parity.
+- 🧱 **Grows with the business** — starts as a smart QR menu, scales up to full ordering, POS, staff ops, and finance.
+- 🔐 **Role-based by design** — owners, managers, cashiers, and workers each get exactly the access they need.
+- 🌍 **Bilingual-first** — built with Arabic and English typography and layout in mind from day one.
 
-> businesses perform better when operations are under control
+## What It Does
 
-Our focus is to give business owners the ability to monitor, manage, and improve their business through one connected ecosystem.
+| Module | Description |
+|---|---|
+| 📋 **Smart QR Menu** | No-install, branded digital menu customers reach by scanning a code — products, images, ingredients, availability, and reviews. |
+| 🛒 **Ordering & POS** *(v1+)* | QR ordering with cart, cashier POS, manual payments, receipts, and shift management. |
+| 👥 **Staff Operations** *(v1.5+)* | Attendance via internal QR, shift scheduling, salary/bonus/penalty tracking, task assignment. |
+| 📊 **Analytics & Reports** | Menu views, product performance, ratings, sales, and branch comparisons. |
+| 🏢 **Multi-Branch Management** | Branch-level menus, staff, and reporting under one business account. |
+| 🛠️ **SuperAdmin Layer** | Platform-level control: tenants, subscription plans, support, and marketing site content. |
 
----
+## Who It's For
 
-## What We Build
-
-Mot7km brings together essential business tools into one experience:
-
-- QR Menu
-- POS
-- Sales Tracking
-- Operational Monitoring
-- Reports & Insights
-- Business Visibility
-
----
-
-## Who It’s For
-
-Mot7km is designed for small and medium operational businesses such as:
+Built for small and medium operational F&B businesses, including:
 
 - Cafés
 - Restaurants
-- Juice Shops
-- Ice Cream Stores
+- Juice shops
+- Ice cream stores
 - Similar service-based businesses
 
----
+## Architecture
 
-## Our Approach
+```
+Customer QR Menu (Next.js, no install)
+        │
+        ▼
+┌─────────────────────────────┐
+│   ASP.NET Core (source of   │   Node.js / NestJS
+│   truth: tenants, users,    │   (engagement layer:
+│   branches, products,       │◄──reviews, notifications,
+│   subscriptions, reports)   │   logs)
+└─────────────────────────────┘
+        │
+        ▼
+Web Dashboard (React/Next.js) · Mobile Apps (Flutter) · Desktop POS (Flutter)
+```
 
-We care about building products that are:
+**Backend:** ASP.NET Core · PostgreSQL · Entity Framework Core · JWT/Refresh Tokens · SignalR
+**Engagement service:** Node.js / NestJS
+**Web:** React · Next.js · TypeScript · Tailwind CSS
+**Mobile & Desktop:** Flutter · Cairo (Arabic) / Inter (English) typography
 
-- Simple
-- Reliable
-- Practical
-- Scalable
-- Built for real business environments
+## Roadmap
 
-We believe powerful software should still feel easy to use.
-
----
-
-## Vision
-
-Mot7km is part of a bigger vision to build modern business infrastructure for businesses that need control, clarity, and operational simplicity.
-
----
+- [x] **v0 — Smart QR Menu Starter**: browse-only digital menu, product management, admin mobile app, owner web dashboard
+- [ ] **v1 — Ordering + POS MVP**: QR ordering with cart, Flutter Desktop POS, manual payments, receipts, shift management
+- [ ] **v1.5 — Staff Operations**: manager & worker mobile apps, attendance, scheduling, salary calculation
+- [ ] **v2 — Business Operations Pro**: expenses, revenue reports, inventory lite, advanced reporting
+- [ ] **v3 — Platform Growth**: subscription automation, payment gateway, landing page CMS, support ticketing
 
 ## Team
 
 Built by:
 
-- Ibrahim Nasser
-- Amr Atef
-- Ahmed El-Shazly
-
----
-
-## Tagline
-
-**Control your business. Anywhere.**
+- **Ibrahim Nasser**
+- **Amr Atef**
+- **Ahmed El-Shazly**
 
 ---
 
 <div align="center">
 
-### Mot7km
-
-Built for businesses that need control.
+**Mot7km** — Built for businesses that need control.
 
 </div>
